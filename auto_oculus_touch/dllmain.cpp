@@ -173,7 +173,7 @@ extern "C"
 				value = -1.0f;
 			if (value > 1.0f)
 				value = 1.0f;
-			long v = long((value*0.5f + 0.5f) * 0x7999) + 1;
+			long v = long((value*0.5f + 0.5f) * 0x7fff) + 1;
 			SetAxis(v, g_vjoy, hid);
 		}
 	}
