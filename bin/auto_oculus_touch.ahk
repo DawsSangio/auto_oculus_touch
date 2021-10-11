@@ -104,6 +104,7 @@ else
 Func_initOculus := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "initOculus", "Ptr")
 Func_poll := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "poll", "Ptr")
 Func_isWearing := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "isWearing", "Ptr")
+Func_recenterTrackingOrigin := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "recenterTrackingOrigin", "Ptr")
 Func_isPressed := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "isPressed", "Ptr")
 Func_isReleased := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "isReleased", "Ptr")
 Func_isDown := DllCall("GetProcAddress", "Ptr", AOTModule, "AStr", "isDown", "Ptr")
@@ -303,6 +304,13 @@ ResetFacing(controller)
 	global Func_resetFacing
 	DllCall(Func_resetFacing, "UInt", controller)
 }
+
+RecenterTrackingOrigin()
+{
+	global Func_recenterTrackingOrigin
+	DllCall(Func_recenterTrackingOrigin)
+}
+
 
 InitvJoy(device)
 {

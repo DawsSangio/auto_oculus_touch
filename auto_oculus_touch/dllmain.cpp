@@ -569,6 +569,15 @@ extern "C"
 			ovr_SetTrackingOriginType(g_HMD, origin == 0 ? ovrTrackingOrigin::ovrTrackingOrigin_EyeLevel : ovrTrackingOrigin::ovrTrackingOrigin_FloorLevel);
 		}
 	}
+
+	__declspec(dllexport) void recenterTrackingOrigin()
+	{
+		if (g_HMD)
+		{
+			ovr_RecenterTrackingOrigin(g_HMD);
+		}
+	}
+
 	__declspec(dllexport) void resetFacing(unsigned int controller)
 	{
 		if (!g_HMD || controller > 2)
